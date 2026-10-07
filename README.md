@@ -66,6 +66,20 @@ python -m build
 GitHub Actions runs these checks on Python 3.11 and 3.12, verifies the controlled
 baseline, and executes the evidence campaign.
 
+## Verification snapshot
+
+For commit `6bdc11a3e916fe7132b92e15e3951726564133d1`:
+
+- 34 pytest cases passed;
+- combined line/branch coverage measured 90.91 percent;
+- 14/14 configured verification cases passed and covered 8/8 requirements;
+- Ruff, formatting, strict mypy, package build, SHA-256 baseline verification,
+  and evidence generation passed on Python 3.11 and 3.12 in
+  [GitHub Actions run 37635637942](https://github.com/pthanureddy/airborne-software-requirements-verification-harness/actions/runs/37635637942).
+
+These figures apply only to the repository-defined host test campaign and are not
+aircraft, target-hardware, structural-coverage, or certification evidence.
+
 ## Repository map
 
 ```text
