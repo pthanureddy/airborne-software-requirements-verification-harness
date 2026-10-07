@@ -1,0 +1,13 @@
+{
+  "assigned_software_level": "C",
+  "parameters": {
+    "gear_down_sink_rate_threshold_fpm": -700,
+    "gear_up_sink_rate_threshold_fpm": -1000,
+    "height_disagreement_limit_ft": 200,
+    "maximum_height_ft": 2500,
+    "maximum_sink_rate_magnitude_fpm": 10000,
+    "minimum_height_ft": 0,
+    "pull_up_height_threshold_ft": 500
+  }
+}
+

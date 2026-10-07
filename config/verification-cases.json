@@ -1,0 +1,101 @@
+[
+  {
+    "id": "TC-001",
+    "title": "Nominal level flight",
+    "requirement_ids": ["HLR-001", "LLR-005"],
+    "input": {"primary_height_ft": 1000, "secondary_height_ft": 1010, "vertical_speed_fpm": 0, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "NORMAL"
+  },
+  {
+    "id": "TC-002",
+    "title": "Gear-up excessive sink rate",
+    "requirement_ids": ["HLR-001", "LLR-004"],
+    "input": {"primary_height_ft": 300, "secondary_height_ft": 320, "vertical_speed_fpm": -1100, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "PULL_UP"
+  },
+  {
+    "id": "TC-003",
+    "title": "Gear-down threshold",
+    "requirement_ids": ["HLR-001", "LLR-004"],
+    "input": {"primary_height_ft": 300, "secondary_height_ft": 300, "vertical_speed_fpm": -800, "gear_down": true, "warning_inhibit": false},
+    "expected_state": "PULL_UP"
+  },
+  {
+    "id": "TC-004",
+    "title": "Warning inhibit precedence",
+    "requirement_ids": ["HLR-001", "LLR-002"],
+    "input": {"primary_height_ft": 200, "secondary_height_ft": 200, "vertical_speed_fpm": -2000, "gear_down": false, "warning_inhibit": true},
+    "expected_state": "INHIBITED"
+  },
+  {
+    "id": "TC-005",
+    "title": "Height channel disagreement",
+    "requirement_ids": ["HLR-001", "LLR-003"],
+    "input": {"primary_height_ft": 600, "secondary_height_ft": 850, "vertical_speed_fpm": 0, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "SENSOR_DISAGREE"
+  },
+  {
+    "id": "TC-006",
+    "title": "Disagreement limit equality",
+    "requirement_ids": ["HLR-001", "LLR-003", "LLR-006"],
+    "input": {"primary_height_ft": 600, "secondary_height_ft": 800, "vertical_speed_fpm": 0, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "NORMAL"
+  },
+  {
+    "id": "TC-007",
+    "title": "Pull-up height equality",
+    "requirement_ids": ["HLR-001", "LLR-004", "LLR-006"],
+    "input": {"primary_height_ft": 500, "secondary_height_ft": 500, "vertical_speed_fpm": -1100, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "NORMAL"
+  },
+  {
+    "id": "TC-008",
+    "title": "Sink-rate equality",
+    "requirement_ids": ["HLR-001", "LLR-004", "LLR-006"],
+    "input": {"primary_height_ft": 300, "secondary_height_ft": 300, "vertical_speed_fpm": -1000, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "NORMAL"
+  },
+  {
+    "id": "TC-009",
+    "title": "Negative height invalid",
+    "requirement_ids": ["HLR-002", "LLR-001"],
+    "input": {"primary_height_ft": -1, "secondary_height_ft": 0, "vertical_speed_fpm": 0, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "INPUT_INVALID"
+  },
+  {
+    "id": "TC-010",
+    "title": "Height above range invalid",
+    "requirement_ids": ["HLR-002", "LLR-001"],
+    "input": {"primary_height_ft": 2501, "secondary_height_ft": 2500, "vertical_speed_fpm": 0, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "INPUT_INVALID"
+  },
+  {
+    "id": "TC-011",
+    "title": "Excessive positive vertical speed invalid",
+    "requirement_ids": ["HLR-002", "LLR-001"],
+    "input": {"primary_height_ft": 1000, "secondary_height_ft": 1000, "vertical_speed_fpm": 10001, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "INPUT_INVALID"
+  },
+  {
+    "id": "TC-012",
+    "title": "Excessive negative vertical speed invalid",
+    "requirement_ids": ["HLR-002", "LLR-001"],
+    "input": {"primary_height_ft": 1000, "secondary_height_ft": 1000, "vertical_speed_fpm": -10001, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "INPUT_INVALID"
+  },
+  {
+    "id": "TC-013",
+    "title": "Invalid input overrides inhibit",
+    "requirement_ids": ["HLR-002", "LLR-001", "LLR-002"],
+    "input": {"primary_height_ft": -1, "secondary_height_ft": 0, "vertical_speed_fpm": 0, "gear_down": false, "warning_inhibit": true},
+    "expected_state": "INPUT_INVALID"
+  },
+  {
+    "id": "TC-014",
+    "title": "Maximum valid bounds",
+    "requirement_ids": ["HLR-001", "HLR-002", "LLR-001", "LLR-005"],
+    "input": {"primary_height_ft": 2500, "secondary_height_ft": 2500, "vertical_speed_fpm": 10000, "gear_down": false, "warning_inhibit": false},
+    "expected_state": "NORMAL"
+  }
+]
+

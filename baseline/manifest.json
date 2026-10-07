@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "path": "config/requirements.json",
+      "sha256": "468eafe34c8ecf5f92b6b4b5c2f9380c4d6e26abd2cf1096094ea165656bb47b"
+    },
+    {
+      "path": "config/software-config.json",
+      "sha256": "332d5f8cef8d3d79ce8726d89183ed80272377cf2c1cfbef6d8681283c113cb7"
+    },
+    {
+      "path": "config/verification-cases.json",
+      "sha256": "df713be7f7f11804a1ec9ad693a0cdecf895ab5161c2d6fd1dbd34e7367b5ba1"
+    },
+    {
+      "path": "src/airborne_vv/sut.py",
+      "sha256": "6f5cafa9b0613256e311711d0d2d9658419b41cfdccd6a85a1fbff612349356a"
+    }
+  ],
+  "schema_version": 1,
+  "software_version": "0.1.0"
+}

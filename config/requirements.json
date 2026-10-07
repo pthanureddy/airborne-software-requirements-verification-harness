@@ -1,0 +1,59 @@
+[
+  {
+    "id": "HLR-001",
+    "level": "high",
+    "text": "The component shall produce one deterministic alert state for each input sample.",
+    "parent_id": null,
+    "verification_method": "test"
+  },
+  {
+    "id": "HLR-002",
+    "level": "high",
+    "text": "The component shall reject input outside the configured operating range.",
+    "parent_id": null,
+    "verification_method": "test"
+  },
+  {
+    "id": "LLR-001",
+    "level": "low",
+    "text": "Invalid numeric values or out-of-range height and vertical speed shall produce INPUT_INVALID.",
+    "parent_id": "HLR-002",
+    "verification_method": "test"
+  },
+  {
+    "id": "LLR-002",
+    "level": "low",
+    "text": "A valid inhibited sample shall produce INHIBITED before operational alerts are evaluated.",
+    "parent_id": "HLR-001",
+    "verification_method": "test"
+  },
+  {
+    "id": "LLR-003",
+    "level": "low",
+    "text": "A channel difference above the configured limit shall produce SENSOR_DISAGREE.",
+    "parent_id": "HLR-001",
+    "verification_method": "test"
+  },
+  {
+    "id": "LLR-004",
+    "level": "low",
+    "text": "Below the configured height threshold, sink rate below the applicable gear threshold shall produce PULL_UP.",
+    "parent_id": "HLR-001",
+    "verification_method": "test"
+  },
+  {
+    "id": "LLR-005",
+    "level": "low",
+    "text": "A valid sample that satisfies no alert condition shall produce NORMAL.",
+    "parent_id": "HLR-001",
+    "verification_method": "test"
+  },
+  {
+    "id": "LLR-006",
+    "level": "low",
+    "text": "Configured comparison limits are strict: equality with a limit shall not activate that condition.",
+    "parent_id": "HLR-001",
+    "verification_method": "test"
+  }
+]
+
